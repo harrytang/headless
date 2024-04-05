@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "Profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "welcome": {
+      "type": "text"
+    },
+    "about": {
+      "type": "text",
+      "required": true
+    },
+    "biography": {
+      "type": "richtext",
+      "required": true
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.social-link",
+      "required": true
+    },
+    "portraitPhoto": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "required": true
+    }
+  }
+}
