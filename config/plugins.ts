@@ -23,13 +23,13 @@ export default ({ env }) => ({
     config: {
       provider: "aws-s3",
       providerOptions: {
-        baseUrl: `https://${env("STORAGE_HOST")}`,
-        rootPath: env("STORAGE_ROOT_PATH"),
-        credentials: {
-          accessKeyId: env("CF_ACCESS_KEY_ID"),
-          secretAccessKey: env("CF_ACCESS_SECRET"),
-        },
         s3Options: {
+          baseUrl: `https://${env("STORAGE_HOST")}`,
+          rootPath: env("STORAGE_ROOT_PATH"),
+          credentials: {
+            accessKeyId: env("CF_ACCESS_KEY_ID"),
+            secretAccessKey: env("CF_ACCESS_SECRET"),
+          },
           region: "auto",
           endpoint: env("CF_ENDPOINT"),
           params: {
