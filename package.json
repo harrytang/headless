@@ -1,6 +1,6 @@
 {
   "name": "headless",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "description": "Harry Tang's headless CMS",
   "license": "MIT",
@@ -11,7 +11,8 @@
     "build": "strapi build",
     "develop": "strapi develop",
     "start": "strapi start",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "release": "npx standard-version && git push --follow-tags origin main"
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.25.3",
