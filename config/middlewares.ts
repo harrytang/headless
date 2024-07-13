@@ -21,6 +21,7 @@ export default [
             "blob:",
             "market-assets.strapi.io",
             process.env.STORAGE_HOST,
+            process.env.STORAGE_HOST_CDN,
           ],
           "media-src": [
             "'self'",
@@ -28,6 +29,7 @@ export default [
             "blob:",
             "market-assets.strapi.io",
             process.env.STORAGE_HOST,
+            process.env.STORAGE_HOST_CDN,
           ],
           upgradeInsecureRequests: null,
         },
