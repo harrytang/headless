@@ -952,10 +952,12 @@ export interface ApiProfileProfile extends Schema.SingleType {
     welcome: Attribute.Text;
     about: Attribute.Text & Attribute.Required;
     biography: Attribute.RichText & Attribute.Required;
-    photos: Attribute.Media & Attribute.Required;
+    photos: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+      Attribute.Required;
     socials: Attribute.Component<'shared.social-link', true> &
       Attribute.Required;
-    portraitPhoto: Attribute.Media & Attribute.Required;
+    portraitPhoto: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.Required;
     seo: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -989,7 +991,8 @@ export interface ApiProjectProject extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required;
     description: Attribute.String & Attribute.Required;
-    icon: Attribute.Media & Attribute.Required;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.Required;
     link: Attribute.Component<'shared.link'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1049,7 +1052,8 @@ export interface ApiWorkWork extends Schema.CollectionType {
     company: Attribute.String & Attribute.Required;
     place: Attribute.String & Attribute.Required;
     title: Attribute.String & Attribute.Required;
-    logo: Attribute.Media & Attribute.Required;
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.Required;
     start: Attribute.String & Attribute.Required;
     end: Attribute.String;
     createdAt: Attribute.DateTime;

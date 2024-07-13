@@ -1,14 +1,45 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface SharedLink extends Schema.Component {
-  collectionName: 'components_shared_links';
+export interface SharedSocialLink extends Schema.Component {
+  collectionName: 'components_shared_social_links';
   info: {
-    displayName: 'link';
-    icon: 'link';
+    displayName: 'socialLink';
+    icon: 'earth';
+    description: '';
   };
   attributes: {
+    title: Attribute.String & Attribute.Required;
     href: Attribute.String & Attribute.Required;
-    label: Attribute.String & Attribute.Required;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.Required;
+  };
+}
+
+export interface SharedSeo extends Schema.Component {
+  collectionName: 'components_shared_seos';
+  info: {
+    displayName: 'seo';
+    icon: 'search';
+  };
+  attributes: {
+    metaTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaDescription: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 50;
+        maxLength: 160;
+      }>;
+    metaImage: Attribute.Media<'images' | 'files' | 'videos'>;
+    metaSocial: Attribute.Component<'shared.meta-social', true>;
+    keywords: Attribute.Text;
+    metaRobots: Attribute.String;
+    structuredData: Attribute.JSON;
+    metaViewport: Attribute.String;
+    canonicalURL: Attribute.String;
   };
 }
 
@@ -31,59 +62,29 @@ export interface SharedMetaSocial extends Schema.Component {
       Attribute.SetMinMaxLength<{
         maxLength: 65;
       }>;
-    image: Attribute.Media;
+    image: Attribute.Media<'images' | 'files' | 'videos'>;
   };
 }
 
-export interface SharedSeo extends Schema.Component {
-  collectionName: 'components_shared_seos';
+export interface SharedLink extends Schema.Component {
+  collectionName: 'components_shared_links';
   info: {
-    displayName: 'seo';
-    icon: 'search';
+    displayName: 'link';
+    icon: 'link';
   };
   attributes: {
-    metaTitle: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    metaDescription: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 50;
-        maxLength: 160;
-      }>;
-    metaImage: Attribute.Media;
-    metaSocial: Attribute.Component<'shared.meta-social', true>;
-    keywords: Attribute.Text;
-    metaRobots: Attribute.String;
-    structuredData: Attribute.JSON;
-    metaViewport: Attribute.String;
-    canonicalURL: Attribute.String;
-  };
-}
-
-export interface SharedSocialLink extends Schema.Component {
-  collectionName: 'components_shared_social_links';
-  info: {
-    displayName: 'socialLink';
-    icon: 'earth';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
     href: Attribute.String & Attribute.Required;
-    icon: Attribute.Media & Attribute.Required;
+    label: Attribute.String & Attribute.Required;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'shared.link': SharedLink;
-      'shared.meta-social': SharedMetaSocial;
-      'shared.seo': SharedSeo;
       'shared.social-link': SharedSocialLink;
+      'shared.seo': SharedSeo;
+      'shared.meta-social': SharedMetaSocial;
+      'shared.link': SharedLink;
     }
   }
 }
