@@ -10,11 +10,12 @@
   "scripts": {
     "build": "strapi build",
     "develop": "strapi develop",
+    "release": "npx standard-version && git push --follow-tags origin main",
     "start": "strapi start",
-    "strapi": "strapi",
-    "release": "npx standard-version && git push --follow-tags origin main"
+    "strapi": "strapi"
   },
   "dependencies": {
+    "@strapi/plugin-graphql": "4.25.3",
     "@strapi/plugin-i18n": "4.25.3",
     "@strapi/plugin-seo": "1.9.9",
     "@strapi/plugin-users-permissions": "4.25.3",
