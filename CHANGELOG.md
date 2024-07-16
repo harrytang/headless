@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/harrytang/headless/compare/v1.0.0...v1.1.0) (2024-07-16)
+
+
+### Features
+
+* adds GraphQL ([998a8d0](https://github.com/harrytang/headless/commit/998a8d04f585041eae6e23808b0e16996b0a2865))
+
 ## 1.0.0 (2024-07-13)
 
 
