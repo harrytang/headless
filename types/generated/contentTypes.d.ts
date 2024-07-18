@@ -849,40 +849,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
 }
 
-export interface ApiDoingDoing extends Schema.CollectionType {
-  collectionName: 'doings';
-  info: {
-    singularName: 'doing';
-    pluralName: 'doings';
-    displayName: 'Doing';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    subtitle: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    category: Attribute.String & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::doing.doing',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::doing.doing',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiPagePage extends Schema.CollectionType {
   collectionName: 'pages';
   info: {
@@ -915,6 +881,12 @@ export interface ApiPagePage extends Schema.CollectionType {
         };
       }>;
     seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Attribute.RichText &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1012,6 +984,38 @@ export interface ApiProjectProject extends Schema.CollectionType {
   };
 }
 
+export interface ApiSkillSkill extends Schema.CollectionType {
+  collectionName: 'skills';
+  info: {
+    singularName: 'skill';
+    pluralName: 'skills';
+    displayName: 'Skill';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    content: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::skill.skill',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::skill.skill',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiUseUse extends Schema.CollectionType {
   collectionName: 'uses';
   info: {
@@ -1085,10 +1089,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::blog.blog': ApiBlogBlog;
-      'api::doing.doing': ApiDoingDoing;
       'api::page.page': ApiPagePage;
       'api::profile.profile': ApiProfileProfile;
       'api::project.project': ApiProjectProject;
+      'api::skill.skill': ApiSkillSkill;
       'api::use.use': ApiUseUse;
       'api::work.work': ApiWorkWork;
     }
