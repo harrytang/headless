@@ -2,7 +2,8 @@
   "collectionName": "components_shared_seos",
   "info": {
     "displayName": "seo",
-    "icon": "search"
+    "icon": "search",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -20,7 +21,7 @@
     "metaImage": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -34,7 +35,8 @@
     },
     "keywords": {
       "type": "text",
-      "regex": "[^,]+"
+      "regex": "[^,]+",
+      "required": true
     },
     "metaRobots": {
       "type": "string",

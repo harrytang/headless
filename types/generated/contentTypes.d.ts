@@ -873,20 +873,22 @@ export interface ApiPagePage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    slug: Attribute.UID<'api::page.page', 'title'>;
-    description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    slug: Attribute.UID<'api::page.page', 'title'> & Attribute.Required;
     seo: Attribute.Component<'shared.seo'> &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     content: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    subtitle: Attribute.String &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

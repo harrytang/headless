@@ -31,7 +31,12 @@
       "type": "media",
       "multiple": true,
       "required": true,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "socials": {
       "type": "component",
@@ -40,10 +45,15 @@
       "required": true
     },
     "portraitPhoto": {
-      "allowedTypes": ["images", "files", "videos", "audios"],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "seo": {
       "type": "component",
