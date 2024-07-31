@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/harrytang/headless/compare/v1.2.1...v1.2.2) (2024-07-31)
+
+
+### Bug Fixes
+
+* **deps:** update strapi monorepo to v4.25.6 ([#21](https://github.com/harrytang/headless/issues/21)) ([f1fbe2d](https://github.com/harrytang/headless/commit/f1fbe2dcc91a1c8d3824ead8a551fd35dad8d697))
+
 ### [1.2.1](https://github.com/harrytang/headless/compare/v1.2.0...v1.2.1) (2024-07-19)
 
 ## [1.2.0](https://github.com/harrytang/headless/compare/v1.1.0...v1.2.0) (2024-07-18)
