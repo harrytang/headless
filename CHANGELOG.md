@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.6](https://github.com/harrytang/headless/compare/v1.2.5...v1.2.6) (2024-11-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @strapi/plugin-i18n to v4.25.13 ([#36](https://github.com/harrytang/headless/issues/36)) ([9f81392](https://github.com/harrytang/headless/commit/9f8139291cb2ef329bd9d12620d0f841621c072e))
+* **deps:** update strapi monorepo ([#33](https://github.com/harrytang/headless/issues/33)) ([5fae64f](https://github.com/harrytang/headless/commit/5fae64facd3159add81dba0a235e0cf860ba2a83))
+* **deps:** update strapi monorepo to v4.25.15 ([#38](https://github.com/harrytang/headless/issues/38)) ([33a09cd](https://github.com/harrytang/headless/commit/33a09cdf8f9c502fddb41b5921af642d67a50b7b))
+
 ### [1.2.5](https://github.com/harrytang/headless/compare/v1.2.4...v1.2.5) (2024-09-15)
 
 
