@@ -27,3 +27,9 @@ Transfer data from one Strapi to another Strapi:
   ```bash
   npm run strapi transfer -- --from https://headless.harrytang.xyz/admin --from-token $PULL_TOKEN
   ```
+
+- Pull data from staging to local:
+
+  ```bash
+  npm run strapi transfer -- --from https://headless-next.harrytang.xyz/admin --from-token $PULL_TOKEN
+  ```  

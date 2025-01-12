@@ -1,73 +1,4 @@
-import type { Schema, Attribute } from '@strapi/strapi';
-
-export interface SharedSocialLink extends Schema.Component {
-  collectionName: 'components_shared_social_links';
-  info: {
-    displayName: 'socialLink';
-    icon: 'earth';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    href: Attribute.String & Attribute.Required;
-    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Attribute.Required;
-  };
-}
-
-export interface SharedSeo extends Schema.Component {
-  collectionName: 'components_shared_seos';
-  info: {
-    displayName: 'seo';
-    icon: 'search';
-    description: '';
-  };
-  attributes: {
-    metaTitle: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    metaDescription: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 50;
-        maxLength: 160;
-      }>;
-    metaImage: Attribute.Media<'images' | 'files' | 'videos'> &
-      Attribute.Required;
-    metaSocial: Attribute.Component<'shared.meta-social', true>;
-    keywords: Attribute.Text & Attribute.Required;
-    metaRobots: Attribute.String;
-    structuredData: Attribute.JSON;
-    metaViewport: Attribute.String;
-    canonicalURL: Attribute.String;
-  };
-}
-
-export interface SharedMetaSocial extends Schema.Component {
-  collectionName: 'components_shared_meta_socials';
-  info: {
-    displayName: 'metaSocial';
-    icon: 'project-diagram';
-    description: '';
-  };
-  attributes: {
-    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> &
-      Attribute.Required;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    description: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 65;
-      }>;
-    image: Attribute.Media<'images' | 'files' | 'videos'> & Attribute.Required;
-  };
-}
+import type { Attribute, Schema } from '@strapi/strapi';
 
 export interface SharedLink extends Schema.Component {
   collectionName: 'components_shared_links';
@@ -81,13 +12,82 @@ export interface SharedLink extends Schema.Component {
   };
 }
 
+export interface SharedMetaSocial extends Schema.Component {
+  collectionName: 'components_shared_meta_socials';
+  info: {
+    description: '';
+    displayName: 'metaSocial';
+    icon: 'project-diagram';
+  };
+  attributes: {
+    description: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 65;
+      }>;
+    image: Attribute.Media<'images' | 'files' | 'videos'> & Attribute.Required;
+    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> &
+      Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+  };
+}
+
+export interface SharedSeo extends Schema.Component {
+  collectionName: 'components_shared_seos';
+  info: {
+    description: '';
+    displayName: 'seo';
+    icon: 'search';
+  };
+  attributes: {
+    canonicalURL: Attribute.String;
+    keywords: Attribute.Text & Attribute.Required;
+    metaDescription: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 160;
+        minLength: 50;
+      }>;
+    metaImage: Attribute.Media<'images' | 'files' | 'videos'> &
+      Attribute.Required;
+    metaRobots: Attribute.String;
+    metaSocial: Attribute.Component<'shared.meta-social', true>;
+    metaTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaViewport: Attribute.String;
+    structuredData: Attribute.JSON;
+  };
+}
+
+export interface SharedSocialLink extends Schema.Component {
+  collectionName: 'components_shared_social_links';
+  info: {
+    description: '';
+    displayName: 'socialLink';
+    icon: 'earth';
+  };
+  attributes: {
+    href: Attribute.String & Attribute.Required;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'shared.social-link': SharedSocialLink;
-      'shared.seo': SharedSeo;
-      'shared.meta-social': SharedMetaSocial;
       'shared.link': SharedLink;
+      'shared.meta-social': SharedMetaSocial;
+      'shared.seo': SharedSeo;
+      'shared.social-link': SharedSocialLink;
     }
   }
 }
