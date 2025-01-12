@@ -31,6 +31,8 @@ jobs:
         with:
           context: .
           platforms: linux/arm64,linux/amd64
+          build-args: |
+            STRAPI_ADMIN_BACKEND_URL=${{ vars.STRAPI_ADMIN_BACKEND_URL }}
           push: true
           tags: ghcr.io/${{github.repository}}:${{github.ref_name}},ghcr.io/${{github.repository}}:latest
           cache-from: type=gha
