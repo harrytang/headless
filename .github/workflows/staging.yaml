@@ -8,7 +8,7 @@ on:
       - ".github/**"
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     environment:
       name: staging
     steps:
@@ -35,7 +35,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          platforms: linux/arm64,linux/amd64
+          platforms: linux/arm64
           build-args: |
             STRAPI_ADMIN_BACKEND_URL=${{ vars.STRAPI_ADMIN_BACKEND_URL }}
           push: true
