@@ -21,7 +21,7 @@
     "@strapi/plugin-users-permissions": "4.25.24",
     "@strapi/provider-email-nodemailer": "4.25.24",
     "@strapi/provider-upload-aws-s3": "4.25.24",
-    "@strapi/strapi": "4.25.24",
+    "@strapi/strapi": "5.24.2",
     "mysql": "2.18.1",
     "qs": "6.14.0",
     "react": "18.3.1",
