@@ -1,5 +1,5 @@
 # Creating multi-stage build for production
-FROM node:22-alpine AS build
+FROM node:24-alpine AS build
 ARG NODE_ENV=production
 ARG STRAPI_ADMIN_BACKEND_URL
 ENV NODE_ENV=${NODE_ENV}
@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # Creating final production image
-FROM node:22-alpine
+FROM node:24-alpine
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 RUN apk add --no-cache vips-dev
