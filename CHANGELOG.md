@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.9](https://github.com/harrytang/headless/compare/v1.2.8...v1.2.9) (2025-12-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @strapi/strapi to v4.26.0 ([#78](https://github.com/harrytang/headless/issues/78)) ([0bee196](https://github.com/harrytang/headless/commit/0bee196e5bcb46559236dc25fde2ff80274fcba8))
+* **deps:** update dependency qs to v6.14.0 ([#50](https://github.com/harrytang/headless/issues/50)) ([0ba13c8](https://github.com/harrytang/headless/commit/0ba13c8c4348833911c016df9fc535794fa6d41d))
+* **deps:** update strapi monorepo to v4.25.20 ([#52](https://github.com/harrytang/headless/issues/52)) ([bad5625](https://github.com/harrytang/headless/commit/bad562575a44b8042ef0b9b048142c8aeb729bfb))
+* **deps:** update strapi monorepo to v4.25.21 ([#56](https://github.com/harrytang/headless/issues/56)) ([1844d73](https://github.com/harrytang/headless/commit/1844d73f6572d1415d8ff4b7b57313e753b438b0))
+* **deps:** update strapi monorepo to v4.25.22 ([#60](https://github.com/harrytang/headless/issues/60)) ([127c9e4](https://github.com/harrytang/headless/commit/127c9e4a75b535a00015b70098cdf3ff39e9cb9e))
+* **deps:** update strapi monorepo to v4.25.23 ([#65](https://github.com/harrytang/headless/issues/65)) ([aa996dd](https://github.com/harrytang/headless/commit/aa996ddfa0317e2e37777fe0bc7fbae0d14d3327))
+* **deps:** update strapi monorepo to v4.25.24 ([#70](https://github.com/harrytang/headless/issues/70)) ([8d8291e](https://github.com/harrytang/headless/commit/8d8291e1065e5cf82c4db4cb440d7f4d0ccb76a0))
+* **deps:** update strapi monorepo to v4.26.0 ([#73](https://github.com/harrytang/headless/issues/73)) ([fc36cdc](https://github.com/harrytang/headless/commit/fc36cdc69d73381d78bc83348e5bd13000cbcb54))
+
 ### [1.2.8](https://github.com/harrytang/headless/compare/v1.2.7...v1.2.8) (2025-01-12)
 
 
