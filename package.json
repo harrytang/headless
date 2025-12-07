@@ -15,12 +15,12 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-graphql": "4.25.24",
+    "@strapi/plugin-graphql": "4.26.0",
     "@strapi/plugin-i18n": "4.25.23",
     "@strapi/plugin-seo": "1.9.9",
-    "@strapi/plugin-users-permissions": "4.25.24",
-    "@strapi/provider-email-nodemailer": "4.25.24",
-    "@strapi/provider-upload-aws-s3": "4.25.24",
+    "@strapi/plugin-users-permissions": "4.26.0",
+    "@strapi/provider-email-nodemailer": "4.26.0",
+    "@strapi/provider-upload-aws-s3": "4.26.0",
     "@strapi/strapi": "4.25.24",
     "mysql": "2.18.1",
     "qs": "6.14.0",
