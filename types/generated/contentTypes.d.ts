@@ -643,6 +643,7 @@ export interface ApiWorkWork extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<'api::work.work', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    url: Attribute.Component<'shared.link'>;
   };
 }
 
