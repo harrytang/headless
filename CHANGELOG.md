@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/harrytang/headless/compare/v1.2.9...v1.3.0) (2026-07-23)
+
+
+### Features
+
+* add URL component to Work content type ([b0520d7](https://github.com/harrytang/headless/commit/b0520d7cd25c4b0cf81e207aaf7dd7f32dc73619))
+
+
+### Bug Fixes
+
+* **deps:** update dependency qs to v6.14.1 ([#80](https://github.com/harrytang/headless/issues/80)) ([8940ae1](https://github.com/harrytang/headless/commit/8940ae128dc8a67613f4938ba24bb9205cdc76ec))
+* **deps:** update dependency qs to v6.14.2 ([#83](https://github.com/harrytang/headless/issues/83)) ([83ef496](https://github.com/harrytang/headless/commit/83ef496c6ca33dc74198a289ec0619fb9b496aff))
+* **deps:** update dependency qs to v6.15.0 ([#84](https://github.com/harrytang/headless/issues/84)) ([ccc30f7](https://github.com/harrytang/headless/commit/ccc30f72074e166b9a1598afbeeaf4674cc74ac6))
+* **deps:** update dependency qs to v6.15.1 ([#91](https://github.com/harrytang/headless/issues/91)) ([a6313ae](https://github.com/harrytang/headless/commit/a6313aebc168d25ee0e87f5b5fbc3fa9b7ae3cfc))
+* **deps:** update dependency qs to v6.15.2 ([#93](https://github.com/harrytang/headless/issues/93)) ([b745ae4](https://github.com/harrytang/headless/commit/b745ae4fb5ae2247e0940385078b90efe2e8606d))
+* **deps:** update dependency qs to v6.15.3 ([#96](https://github.com/harrytang/headless/issues/96)) ([d61abb2](https://github.com/harrytang/headless/commit/d61abb2c4ee32bd3def791b2d09f8ab049e67de0))
+* **deps:** update strapi monorepo to v4.26.1 ([#81](https://github.com/harrytang/headless/issues/81)) ([1283e29](https://github.com/harrytang/headless/commit/1283e29487f7d0d3a66ae41e10eb24d2995c8616))
+* **deps:** update strapi monorepo to v4.26.2 ([#94](https://github.com/harrytang/headless/issues/94)) ([493d0be](https://github.com/harrytang/headless/commit/493d0be7fe1f63482a8ed3e9197efe42a1331a6f))
+
 ### [1.2.9](https://github.com/harrytang/headless/compare/v1.2.8...v1.2.9) (2025-12-07)
 
 
