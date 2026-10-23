@@ -1,7 +1,13 @@
 export default [
   "strapi::logger",
   "strapi::errors",
-  "strapi::cors",
+  {
+    name: "strapi::cors",
+    config: {
+      // the web app sends Strapi-Response-Format from the browser too (load more articles)
+      headers: ["Content-Type", "Authorization", "Origin", "Accept", "Strapi-Response-Format"],
+    },
+  },
   "strapi::poweredBy",
   "strapi::query",
   "strapi::body",
