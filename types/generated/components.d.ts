@@ -1,18 +1,18 @@
-import type { Attribute, Schema } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SharedLink extends Schema.Component {
+export interface SharedLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_links';
   info: {
     displayName: 'link';
     icon: 'link';
   };
   attributes: {
-    href: Attribute.String & Attribute.Required;
-    label: Attribute.String & Attribute.Required;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface SharedMetaSocial extends Schema.Component {
+export interface SharedMetaSocial extends Struct.ComponentSchema {
   collectionName: 'components_shared_meta_socials';
   info: {
     description: '';
@@ -20,23 +20,24 @@ export interface SharedMetaSocial extends Schema.Component {
     icon: 'project-diagram';
   };
   attributes: {
-    description: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 65;
       }>;
-    image: Attribute.Media<'images' | 'files' | 'videos'> & Attribute.Required;
-    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> &
-      Attribute.Required;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
+      Schema.Attribute.Required;
+    socialNetwork: Schema.Attribute.Enumeration<['Facebook', 'Twitter']> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
   };
 }
 
-export interface SharedSeo extends Schema.Component {
+export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
     description: '';
@@ -44,29 +45,29 @@ export interface SharedSeo extends Schema.Component {
     icon: 'search';
   };
   attributes: {
-    canonicalURL: Attribute.String;
-    keywords: Attribute.Text & Attribute.Required;
-    metaDescription: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
+    canonicalURL: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text & Schema.Attribute.Required;
+    metaDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
         minLength: 50;
       }>;
-    metaImage: Attribute.Media<'images' | 'files' | 'videos'> &
-      Attribute.Required;
-    metaRobots: Attribute.String;
-    metaSocial: Attribute.Component<'shared.meta-social', true>;
-    metaTitle: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
+    metaImage: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
+      Schema.Attribute.Required;
+    metaRobots: Schema.Attribute.String;
+    metaSocial: Schema.Attribute.Component<'shared.meta-social', true>;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
-    metaViewport: Attribute.String;
-    structuredData: Attribute.JSON;
+    metaViewport: Schema.Attribute.String;
+    structuredData: Schema.Attribute.JSON;
   };
 }
 
-export interface SharedSocialLink extends Schema.Component {
+export interface SharedSocialLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_social_links';
   info: {
     description: '';
@@ -74,16 +75,16 @@ export interface SharedSocialLink extends Schema.Component {
     icon: 'earth';
   };
   attributes: {
-    href: Attribute.String & Attribute.Required;
-    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export namespace Public {
+    export interface ComponentSchemas {
       'shared.link': SharedLink;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
