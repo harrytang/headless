@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/harrytang/headless/compare/v2.0.0...v2.0.1) (2026-10-24)
+
+
+### Bug Fixes
+
+* **db:** opt-in causal reads for MaxScale/Galera (DATABASE_WSREP_SYNC_WAIT) ([3992ecf](https://github.com/harrytang/headless/commit/3992ecfd233260a91118eddf18aa490ad34b9c37))
+
 ## [2.0.0](https://github.com/harrytang/headless/compare/v1.3.0...v2.0.0) (2026-10-24)
 
 

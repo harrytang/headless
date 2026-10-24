@@ -1,6 +1,6 @@
 {
   "name": "headless",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": false,
   "description": "Harry Tang's headless CMS",
   "license": "MIT",
