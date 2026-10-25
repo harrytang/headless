@@ -2,6 +2,50 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/harrytang/headless/compare/v2.0.0...v2.0.1) (2026-10-24)
+
+
+### Bug Fixes
+
+* **db:** opt-in causal reads for MaxScale/Galera (DATABASE_WSREP_SYNC_WAIT) ([3992ecf](https://github.com/harrytang/headless/commit/3992ecfd233260a91118eddf18aa490ad34b9c37))
+
+## [2.0.0](https://github.com/harrytang/headless/compare/v1.3.0...v2.0.0) (2026-10-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* the first start migrates the database to the Strapi 5
+schema and cannot be undone; back up the database before deploying.
+REST responses are flattened unless the client sends
+Strapi-Response-Format: v4, locale=all returns no entries, and /graphql
+is gone.
+
+Evidence (local rehearsal on a copy of prod content, MariaDB 11.3):
+- migration finished in ~0.4s; blogs en 77 docs (75 published + drafts),
+  vi 3 docs (3 published); other types and 242 files kept
+- API parity, 56 queries the web app makes, with the v4 header:
+  local v4 -> v5 38/38 and prod v4 -> local v5 56/56 identical apart
+  from added keys (media focalPoint, publishedAt)
+- web e2e against the local site on Strapi 5: 31 passed
+- CORS preflight allows Strapi-Response-Format; admin -> 200
+- webhooks: draft create/save send publishedAt null; publish sends
+  populated seo; unpublish/delete carry the slug
+- docker build of the Dockerfile succeeds; the image starts with
+  NODE_ENV=production (health 204, API 200, admin 200)
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+### Features
+
+* upgrade to Strapi 5.59.0 ([88bd658](https://github.com/harrytang/headless/commit/88bd658e3fc4485006ab3f2ebb378d29dd915eab))
+
+
+### Bug Fixes
+
+* **cors:** allow the Strapi-Response-Format request header ([5fc4dff](https://github.com/harrytang/headless/commit/5fc4dffa6685c6510d6b6e642ddbce36e9350ea1))
+* **deps:** update dependency qs to v6.16.0 ([#102](https://github.com/harrytang/headless/issues/102)) ([b0faabc](https://github.com/harrytang/headless/commit/b0faabcd3ebf52840ccb2808de2a1ef560bffaad))
+* **deps:** update dependency qs to v6.16.1 ([#105](https://github.com/harrytang/headless/issues/105)) ([1820ffb](https://github.com/harrytang/headless/commit/1820ffbb6c9e81a21bc3ad0f365624eecf2e32c1))
+
 ## [1.3.0](https://github.com/harrytang/headless/compare/v1.2.9...v1.3.0) (2026-07-23)
 
 
